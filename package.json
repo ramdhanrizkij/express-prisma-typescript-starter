@@ -1,7 +1,7 @@
 {
-  "name": "express-typescript",
-  "version": "1.0.0",
-  "description": "Express TypeScript Boilerplate with Authentication and Authorization",
+  "name": "express-ts-prisma-starter",
+  "version": "1.0.2",
+  "description": "Express TypeScript Boilerplate with Authentication and Authorization using Prisma ORM",
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",
@@ -20,8 +20,18 @@
     "authentication",
     "authorization"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Ramdhan Rizki",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramdhanrizkij/express-prisma-typescript-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ramdhanrizkij/express-prisma-typescript-starter/issues"
+  },
+  "bin":{
+    "create-express-ts-app": "./bin/cli.js"
+  },
   "dependencies": {
     "@prisma/client": "^5.10.2",
     "@types/swagger-jsdoc": "^6.0.4",

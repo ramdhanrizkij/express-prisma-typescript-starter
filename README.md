@@ -68,6 +68,16 @@ A robust Express.js boilerplate with TypeScript, featuring authentication, autho
 └── .env.example              # Example environment variables
 ```
 
+## Quick Start with npx
+
+You can quickly create a new project using this template via npm:
+
+```
+npx express-ts-prisma-starter <project-directory>
+```
+
+Replace `<project-directory>` with your desired folder name. This will clone the template, install dependencies, and set up your project structure.
+
 ## Installation
 
 1. **Clone the repository:**
