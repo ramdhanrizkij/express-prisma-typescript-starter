@@ -1,6 +1,7 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { errorLoggerMiddleware, requestLoggerMiddleware } from './utils/logger';
 import swaggerUi from 'swagger-ui-express';
 import { specs } from './config/swagger';
 import { authRoutes } from './routes/auth.routes';
@@ -24,7 +25,9 @@ class App {
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(cors());
 
-        // Swagger UI
+        this.app.use(requestLoggerMiddleware);
+        this.app.use(errorLoggerMiddleware);
+
         this.app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
     }
 
@@ -32,7 +35,7 @@ class App {
         this.app.use('/api/auth', authRoutes);
         this.app.use('/api/users', userRoutes);
         this.app.use('/api/roles', roleRoutes);
-        this.app.use("api/permission", permissionRoutes)
+        this.app.use('/api/permission', permissionRoutes);
     }
 }
 
